@@ -33,6 +33,7 @@ public class ProdutoService implements IProdutoService {
 
     @Override
     public Produto Save(Produto produto) {
+        produto.setId(UUID.randomUUID());
         return fakeRepository.Save(produto);
     }
 
