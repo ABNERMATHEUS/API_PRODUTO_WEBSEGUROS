@@ -1,20 +1,13 @@
 package com.grupofaculdade.tde01produtoresource.contracts;
 
 import com.grupofaculdade.tde01produtoresource.model.Produto;
-import org.springframework.http.ResponseEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
 import java.util.UUID;
 
-public interface IProdutoRepository {
 
-    List<Produto> GetAll();
+@Repository
+public interface IProdutoRepository extends JpaRepository<Produto, UUID>{
 
-    Produto GetById(UUID id);
-
-   Produto Save(Produto produto);
-
-    Produto Update(Produto produto);
-
-    void Delete(UUID uuid);
 }
