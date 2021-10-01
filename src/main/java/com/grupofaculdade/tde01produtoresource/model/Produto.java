@@ -1,15 +1,18 @@
 package com.grupofaculdade.tde01produtoresource.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
 @Table(name = "produto")
-public class Produto {
+public class Produto implements Serializable {
 
 
     @Id
@@ -42,11 +45,12 @@ public class Produto {
     private SellerAddress seller_address;
 
 
+    @ManyToMany
+    @JoinColumn(name = "attributes", referencedColumnName = "ID")
+    List<Attributes> attributes = new ArrayList<>();
 
-    //private ArrayList<Attributes> list_attributes;
 
-
-    public Produto(long id, String name, String site_id, String title, String subtitle, String currency_id, String condition, String permalink, long id_integracao, long saller_id, long initial_quantity, long avaliable_quantity, double price, double base_price, double original_price, Date start_time, Date stop_time, SellerAddress seller_address, String seller_contact, ArrayList<Attributes> attributes) {
+    public Produto(long id, String name, String site_id, String title, String subtitle, String currency_id, String condition, String permalink, long id_integracao, long saller_id, long initial_quantity, long avaliable_quantity, double price, double base_price, double original_price, Date start_time, Date stop_time, SellerAddress seller_address, String seller_contact, List<Attributes> attributes) {
         this.id = id;
         this.name = name;
         this.site_id = site_id;
@@ -66,7 +70,7 @@ public class Produto {
         this.stop_time = stop_time;
         this.seller_address = seller_address;
         this.seller_contact = seller_contact;
-//        this.attributes = attributes;
+        this.attributes = attributes;
     }
 
 
@@ -211,13 +215,13 @@ public class Produto {
         this.stop_time = stop_time;
     }
 
-//    public SellerAddress getSeller_address() {
-//        return seller_address;
-//    }
-//
-//    public void setSeller_address(SellerAddress seller_address) {
-//        this.seller_address = seller_address;
-//    }
+    public SellerAddress getSeller_address() {
+        return seller_address;
+    }
+
+    public void setSeller_address(SellerAddress seller_address) {
+        this.seller_address = seller_address;
+    }
 
     public String getSeller_contact() {
         return seller_contact;
@@ -227,11 +231,11 @@ public class Produto {
         this.seller_contact = seller_contact;
     }
 
-//    public ArrayList<Attributes> getAttributes() {
-//        return attributes;
-//    }
-//
-//    public void setAttributes(ArrayList<Attributes> attributes) {
-//        this.attributes = attributes;
-//    }
+    public List<Attributes> getAttributes() {
+        return attributes;
+    }
+
+    public void setAttributes(List<Attributes> attributes) {
+        this.attributes = attributes;
+    }
 }

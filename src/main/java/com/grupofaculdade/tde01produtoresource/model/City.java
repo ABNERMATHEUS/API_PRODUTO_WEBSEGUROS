@@ -1,8 +1,6 @@
 package com.grupofaculdade.tde01produtoresource.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -11,13 +9,14 @@ public class City implements Serializable {
     @Id
     @Column(name = "ID", nullable = false)
     private long id;
+
     private String name;
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 

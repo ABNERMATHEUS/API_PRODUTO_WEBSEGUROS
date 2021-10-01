@@ -1,9 +1,12 @@
 package com.grupofaculdade.tde01produtoresource.model;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.io.Serializable;
 
-public class Attributes {
+@Entity
+public class Attributes implements Serializable {
 
     @Id
     @Column(name = "ID", nullable = false)
