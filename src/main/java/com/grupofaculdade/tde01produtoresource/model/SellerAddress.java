@@ -6,6 +6,7 @@ import java.io.Serializable;
 @Entity
 public class SellerAddress implements Serializable {
 
+    @Id
     @Column(name = "ID", nullable = false)
     private long id;
 
@@ -21,7 +22,6 @@ public class SellerAddress implements Serializable {
     @JoinColumn(name = "country", referencedColumnName = "ID")
     private Country country;
 
-    @Id
     public long getId() {
         return id;
     }

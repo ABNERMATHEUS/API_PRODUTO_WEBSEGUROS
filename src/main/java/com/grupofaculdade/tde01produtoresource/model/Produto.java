@@ -1,6 +1,6 @@
 package com.grupofaculdade.tde01produtoresource.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -12,27 +12,41 @@ import java.util.UUID;
 public class Produto {
 
 
+    @Id
     @Column(name = "ID", nullable = false)
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private UUID id;
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private long id;
 
 
-    private String name, site_id, title, subtitle, currency_id, condition, permalink, seller_contact;
-    private long id_integracao, saller_id, initial_quantity, avaliable_quantity;
-    private double price, base_price, original_price;
-    private Date start_time, stop_time;
+    private String name;
+    private String site_id;
+    private String title;
+    private String subtitle;
+    private String currency_id;
+    private String condition;
+    private String permalink;
+    private String seller_contact;
+    private long id_integracao;
+    private long saller_id;
+    private long initial_quantity;
+    private long avaliable_quantity;
+    private double price;
+    private double base_price;
+    private double original_price;
+    private Date start_time;
+    private Date stop_time;
 
 
-    // TODO
-//    @JsonIgnore
-//    @ManyToMany
-//    private SellerAddress seller_address;
-//
-//
-//    private ArrayList<Attributes> attributes;
+    @ManyToOne
+    @JoinColumn(name = "seller_address", referencedColumnName = "ID")
+    private SellerAddress seller_address;
 
 
-    public Produto(UUID id, String name, String site_id, String title, String subtitle, String currency_id, String condition, String permalink, long id_integracao, long saller_id, long initial_quantity, long avaliable_quantity, double price, double base_price, double original_price, Date start_time, Date stop_time, SellerAddress seller_address, String seller_contact, ArrayList<Attributes> attributes) {
+
+    //private ArrayList<Attributes> list_attributes;
+
+
+    public Produto(long id, String name, String site_id, String title, String subtitle, String currency_id, String condition, String permalink, long id_integracao, long saller_id, long initial_quantity, long avaliable_quantity, double price, double base_price, double original_price, Date start_time, Date stop_time, SellerAddress seller_address, String seller_contact, ArrayList<Attributes> attributes) {
         this.id = id;
         this.name = name;
         this.site_id = site_id;
@@ -50,7 +64,7 @@ public class Produto {
         this.original_price = original_price;
         this.start_time = start_time;
         this.stop_time = stop_time;
-//        this.seller_address = seller_address;
+        this.seller_address = seller_address;
         this.seller_contact = seller_contact;
 //        this.attributes = attributes;
     }
@@ -60,12 +74,12 @@ public class Produto {
     public Produto() {
     }
 
-    @Id
-    public UUID getId() {
+
+    public long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(long id) {
         this.id = id;
     }
 

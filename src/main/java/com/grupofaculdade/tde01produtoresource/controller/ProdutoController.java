@@ -39,15 +39,14 @@ public class ProdutoController  {
         return ResponseEntity.noContent().build();
     }
 
+
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Produto> save(@RequestBody Produto produto) throws URISyntaxException {
-
         return ResponseEntity.created(new URI("locahost")).body(produtoService.Save(produto));
     }
 
     @RequestMapping( method = RequestMethod.PUT)
     public ResponseEntity<Produto> put(@RequestBody Produto produto) {
-
         return ResponseEntity.ok(produtoService.Update(produto));
     }
 
