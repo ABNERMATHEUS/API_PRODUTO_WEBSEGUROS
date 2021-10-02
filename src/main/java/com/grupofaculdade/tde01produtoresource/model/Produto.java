@@ -1,14 +1,10 @@
 package com.grupofaculdade.tde01produtoresource.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.UUID;
 
 @Entity
 @Table(name = "produto")
@@ -41,16 +37,16 @@ public class Produto implements Serializable {
 
 
     @ManyToOne
-    @JoinColumn(name = "seller_address", referencedColumnName = "ID")
-    private SellerAddress seller_address;
+    @JoinColumn(name = "sellerAddress", referencedColumnName = "ID")
+    private SellerAddress sellerAddress;
 
 
-    @ManyToMany
-    @JoinColumn(name = "attributes", referencedColumnName = "ID")
-    List<Attributes> attributes = new ArrayList<>();
+//    @ManyToMany
+//    @JoinColumn(name = "attributes", referencedColumnName = "ID")
+//    List<Attributes> attributes = new ArrayList<>();
 
 
-    public Produto(long id, String name, String site_id, String title, String subtitle, String currency_id, String condition, String permalink, long id_integracao, long saller_id, long initial_quantity, long avaliable_quantity, double price, double base_price, double original_price, Date start_time, Date stop_time, SellerAddress seller_address, String seller_contact, List<Attributes> attributes) {
+    public Produto(long id, String name, String site_id, String title, String subtitle, String currency_id, String condition, String permalink, String seller_contact, long id_integracao, long saller_id, long initial_quantity, long avaliable_quantity, double price, double base_price, double original_price, Date start_time, Date stop_time, SellerAddress sellerAddress, List<Attributes> attributes) {
         this.id = id;
         this.name = name;
         this.site_id = site_id;
@@ -59,6 +55,7 @@ public class Produto implements Serializable {
         this.currency_id = currency_id;
         this.condition = condition;
         this.permalink = permalink;
+        this.seller_contact = seller_contact;
         this.id_integracao = id_integracao;
         this.saller_id = saller_id;
         this.initial_quantity = initial_quantity;
@@ -68,11 +65,9 @@ public class Produto implements Serializable {
         this.original_price = original_price;
         this.start_time = start_time;
         this.stop_time = stop_time;
-        this.seller_address = seller_address;
-        this.seller_contact = seller_contact;
-        this.attributes = attributes;
+        this.sellerAddress = sellerAddress;
+        //this.attributes = attributes;
     }
-
 
     @Deprecated
     public Produto() {
@@ -215,12 +210,12 @@ public class Produto implements Serializable {
         this.stop_time = stop_time;
     }
 
-    public SellerAddress getSeller_address() {
-        return seller_address;
+    public SellerAddress getSellerAddress() {
+        return sellerAddress;
     }
 
-    public void setSeller_address(SellerAddress seller_address) {
-        this.seller_address = seller_address;
+    public void setSellerAddress(SellerAddress sellerAddress) {
+        this.sellerAddress = sellerAddress;
     }
 
     public String getSeller_contact() {
@@ -231,11 +226,11 @@ public class Produto implements Serializable {
         this.seller_contact = seller_contact;
     }
 
-    public List<Attributes> getAttributes() {
-        return attributes;
-    }
-
-    public void setAttributes(List<Attributes> attributes) {
-        this.attributes = attributes;
-    }
+//    public List<Attributes> getAttributes() {
+//        return attributes;
+//    }
+//
+//    public void setAttributes(List<Attributes> attributes) {
+//        this.attributes = attributes;
+//    }
 }
