@@ -15,11 +15,10 @@ TDE01 PARA ENTREGA DA DISCIPLINA DE SISTEMA WEB SEGUROS
   </li>
 
   <li>
-  Osvaldo Cabral
+  Matheus Gomes
   </li>
   
   <li>
-  Matheus Gomes
+  Osvaldo Cabral
   </li>
-
 </ul>
