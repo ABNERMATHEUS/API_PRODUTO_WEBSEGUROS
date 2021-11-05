@@ -51,6 +51,12 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.7.0</version>
+        </dependency>
+
         <!--Adicionado apenas para acessar o console do H2-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
