@@ -14,12 +14,11 @@ TDE01 PARA ENTREGA DA DISCIPLINA DE SISTEMA WEB SEGUROS
   Jhonatan Medeiros
   </li>
 
-  <li>
-  Osvaldo Cabral
+    <li>
+  Matheus Gomes
   </li>
   
   <li>
-  Matheus Gomes
+  Osvaldo Cabral
   </li>
-
 </ul>
