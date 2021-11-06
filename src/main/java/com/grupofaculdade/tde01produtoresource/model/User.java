@@ -1,12 +1,13 @@
 package com.grupofaculdade.tde01produtoresource.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.grupofaculdade.tde01produtoresource.model.enums.Perfil;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class User implements Serializable {
 
@@ -20,6 +21,10 @@ public class User implements Serializable {
     @JsonIgnore
     private String senha;
 
+    @ElementCollection(fetch=FetchType.EAGER)
+    @CollectionTable(name="PERFIS")
+    private Set<Integer> perfis = new HashSet<>();
+
     public User() {
     }
 
@@ -27,6 +32,7 @@ public class User implements Serializable {
         this.id = id;
         this.email = email;
         this.senha = senha;
+        addPerfil(Perfil.CLIENTE);
     }
 
     public Integer getId() {
@@ -51,6 +57,14 @@ public class User implements Serializable {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public Set<Perfil> getPerfis() {
+        return perfis.stream().map(x -> Perfil.toEnum(x)).collect(Collectors.toSet());
+    }
+
+    public void addPerfil(Perfil perfil) {
+        perfis.add(perfil.getCod());
     }
 
 }

@@ -1,10 +1,12 @@
 package com.grupofaculdade.tde01produtoresource.security;
 
+import com.grupofaculdade.tde01produtoresource.model.enums.Perfil;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class UserSS implements UserDetails {
@@ -24,7 +26,7 @@ public class UserSS implements UserDetails {
         this.id = id;
         this.email = email;
         this.senha = senha;
-        this.authorities = perfis.stream().map(x -> SimpleGrantedAuthority(x.getDescricao())).collect(Collectors.toList());
+        this.authorities = perfis.stream().map(x -> new SimpleGrantedAuthority(x.getDescricao())).collect(Collectors.toList());
     }
 
     public Integer getId() {
