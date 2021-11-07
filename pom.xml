@@ -57,6 +57,8 @@
             <version>0.7.0</version>
         </dependency>
 
+
+
         <!--Adicionado apenas para acessar o console do H2-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
