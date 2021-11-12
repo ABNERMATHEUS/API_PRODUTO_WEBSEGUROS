@@ -1,5 +1,9 @@
 package com.grupofaculdade.tde01produtoresource.controller;
 
+import com.grupofaculdade.tde01produtoresource.config.JwtTokenUtil;
+import com.grupofaculdade.tde01produtoresource.model.JwtRequest;
+import com.grupofaculdade.tde01produtoresource.model.JwtResponse;
+import com.grupofaculdade.tde01produtoresource.services.JwtUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -7,16 +11,7 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.crm.config.JwtTokenUtil;
-import com.crm.model.JwtRequest;
-import com.crm.model.JwtResponse;
-import com.crm.service.JwtUserDetailsService;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin

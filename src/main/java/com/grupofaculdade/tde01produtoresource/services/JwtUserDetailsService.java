@@ -17,7 +17,7 @@ public class JwtUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        com.bootstrap.springboot.model.User user = userService.getByEmail(email);
+       User user = userService.getByEmail(email);
 
         if (user.getEmail().equals(email)) {
             return new User(email, user.getPassword(),
