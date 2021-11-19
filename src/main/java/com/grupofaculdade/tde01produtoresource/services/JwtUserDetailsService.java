@@ -19,7 +19,7 @@ public class JwtUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
        User user = userService.getByEmail(email);
 
-        if (user.getEmail().equals(email)) {
+        if (user.getUsername().equals(email)) {
             return new User(email, user.getPassword(),
                     new ArrayList<>());
         } else {
