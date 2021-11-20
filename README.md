@@ -1,4 +1,5 @@
-# API RESTFul desenvolvida Spring Produto
+# API RESTFul De gerenciamento de Produto desenvolvida em Spring boot
+
 TDE01 PARA ENTREGA DA DISCIPLINA DE SISTEMA WEB SEGUROS
 ### NOME DOS ALUNOS
 <ul>
