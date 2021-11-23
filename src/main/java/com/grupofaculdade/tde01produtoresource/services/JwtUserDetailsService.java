@@ -2,6 +2,7 @@ package com.grupofaculdade.tde01produtoresource.services;
 
 import java.util.ArrayList;
 
+import org.javatuples.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -17,10 +18,10 @@ public class JwtUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-       User user = userService.getByEmail(email);
+        Pair<String,String> user = userService.GetByEmail(email);
 
-        if (user.getUsername().equals(email)) {
-            return new User(email, user.getPassword(),
+        if (user.getValue0().equals(email)) {
+            return new User(email, user.getValue1(),
                     new ArrayList<>());
         } else {
             throw new UsernameNotFoundException("User not found with email: " + email);

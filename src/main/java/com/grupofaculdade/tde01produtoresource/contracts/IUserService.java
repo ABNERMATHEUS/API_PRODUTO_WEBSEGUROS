@@ -1,10 +1,12 @@
 package com.grupofaculdade.tde01produtoresource.contracts;
 
-import com.grupofaculdade.tde01produtoresource.model.User;
+import com.grupofaculdade.tde01produtoresource.model.UserCustom;
+import org.javatuples.Pair;
+
 
 public interface IUserService {
 
-    User GetByEmail(String email);
+    Pair<String,String> GetByEmail(String email);
 
-    User Save(User user);
+    UserCustom Save(UserCustom userCustom);
 }

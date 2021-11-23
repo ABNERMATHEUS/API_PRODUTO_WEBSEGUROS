@@ -1,13 +1,22 @@
 package com.grupofaculdade.tde01produtoresource.model;
 
-public class User {
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
+public class UserCustom {
+
+    @Id
     private String email;
     private String senha;
 
-    public User(String email, String senha) {
+    public UserCustom(String email, String senha) {
         this.email = email;
         this.senha = senha;
+    }
+
+    public UserCustom() {
+
     }
 
     public String getEmail() {
@@ -18,7 +27,7 @@ public class User {
         this.email = email;
     }
 
-    public String getSenha() {
+    public String getPassword() {
         return senha;
     }
 

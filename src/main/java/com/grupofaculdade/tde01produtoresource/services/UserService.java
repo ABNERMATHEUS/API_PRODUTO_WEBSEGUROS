@@ -2,13 +2,13 @@ package com.grupofaculdade.tde01produtoresource.services;
 
 import com.grupofaculdade.tde01produtoresource.contracts.IUserRepository;
 import com.grupofaculdade.tde01produtoresource.contracts.IUserService;
-import com.grupofaculdade.tde01produtoresource.model.User;
+import com.grupofaculdade.tde01produtoresource.model.UserCustom;
 import com.grupofaculdade.tde01produtoresource.security.UserSS;
+import org.javatuples.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import java.util.UUID;
 
 @Service
 public class UserService implements IUserService {
@@ -26,12 +26,13 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public User GetByEmail(String email) {
-        return userRepository.getByEmail(email);
+    public Pair<String,String> GetByEmail(String email) {
+        UserCustom userCustom = userRepository.getByEmail(email);
+        return  new Pair(userCustom.getEmail(), userCustom.getPassword());
     }
 
     @Override
-    public User Save(User user) {
-        return userRepository.save(user);
+    public UserCustom Save(UserCustom userCustom) {
+        return userRepository.save(userCustom);
     }
 }
