@@ -1,5 +1,10 @@
 package com.grupofaculdade.tde01produtoresource.model;
 
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -7,7 +12,7 @@ import java.io.Serializable;
 public class SellerAddress implements Serializable {
 
     @Id
-    @Column(name = "ID", nullable = false)
+    @Column(name = "ID", nullable = true)
     private long id;
 
     @ManyToOne
@@ -21,6 +26,17 @@ public class SellerAddress implements Serializable {
     @ManyToOne
     @JoinColumn(name = "country", referencedColumnName = "ID")
     private Country country;
+
+    public SellerAddress(long id, City city, State state, Country country) {
+        this.id = id;
+        this.city = city;
+        this.state = state;
+        this.country = country;
+    }
+
+    public SellerAddress() {
+    }
+
 
     public long getId() {
         return id;

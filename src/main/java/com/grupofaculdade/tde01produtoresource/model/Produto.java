@@ -1,5 +1,8 @@
 package com.grupofaculdade.tde01produtoresource.model;
 
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -13,8 +16,7 @@ public class Produto implements Serializable {
 
     @Id
     @Column(name = "ID", nullable = false)
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private long id;
+    private String id;
 
 
     private String name;
@@ -37,8 +39,8 @@ public class Produto implements Serializable {
 
 
     @ManyToOne
-    @JoinColumn(name = "sellerAddress", referencedColumnName = "ID")
-    private SellerAddress sellerAddress;
+    @JoinColumn(name = "seller_address", referencedColumnName = "ID")
+    private SellerAddress seller_address;
 
 
 //    @ManyToMany
@@ -46,7 +48,7 @@ public class Produto implements Serializable {
 //    List<Attributes> attributes = new ArrayList<>();
 
 
-    public Produto(long id, String name, String site_id, String title, String subtitle, String currency_id, String condition, String permalink, String seller_contact, long id_integracao, long saller_id, long initial_quantity, long avaliable_quantity, double price, double base_price, double original_price, Date start_time, Date stop_time, SellerAddress sellerAddress, List<Attributes> attributes) {
+    public Produto(String id, String name, String site_id, String title, String subtitle, String currency_id, String condition, String permalink, String seller_contact, long id_integracao, long saller_id, long initial_quantity, long avaliable_quantity, double price, double base_price, double original_price, Date start_time, Date stop_time, SellerAddress seller_address, List<Attributes> attributes) {
         this.id = id;
         this.name = name;
         this.site_id = site_id;
@@ -65,20 +67,20 @@ public class Produto implements Serializable {
         this.original_price = original_price;
         this.start_time = start_time;
         this.stop_time = stop_time;
-        this.sellerAddress = sellerAddress;
+        this.seller_address = seller_address;
         //this.attributes = attributes;
     }
 
-    @Deprecated
+
     public Produto() {
     }
 
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -136,6 +138,14 @@ public class Produto implements Serializable {
 
     public void setPermalink(String permalink) {
         this.permalink = permalink;
+    }
+
+    public String getSeller_contact() {
+        return seller_contact;
+    }
+
+    public void setSeller_contact(String seller_contact) {
+        this.seller_contact = seller_contact;
     }
 
     public long getId_integracao() {
@@ -210,27 +220,11 @@ public class Produto implements Serializable {
         this.stop_time = stop_time;
     }
 
-    public SellerAddress getSellerAddress() {
-        return sellerAddress;
+    public SellerAddress getSeller_address() {
+        return seller_address;
     }
 
-    public void setSellerAddress(SellerAddress sellerAddress) {
-        this.sellerAddress = sellerAddress;
+    public void setSeller_address(SellerAddress seller_address) {
+        this.seller_address = seller_address;
     }
-
-    public String getSeller_contact() {
-        return seller_contact;
-    }
-
-    public void setSeller_contact(String seller_contact) {
-        this.seller_contact = seller_contact;
-    }
-
-//    public List<Attributes> getAttributes() {
-//        return attributes;
-//    }
-//
-//    public void setAttributes(List<Attributes> attributes) {
-//        this.attributes = attributes;
-//    }
 }
