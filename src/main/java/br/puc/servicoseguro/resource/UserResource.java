@@ -34,9 +34,9 @@ public class UserResource {
         return ResponseEntity.ok().body(user);
     }
 
-    @DeleteMapping("{id}")
-    public ResponseEntity<String> deleteById(@PathVariable Long id) {
-        userService.deleteById(id);
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteById(@PathVariable String id) {
+        userService.deleteById(Long.parseLong(id));
         return ResponseEntity.ok().body("User excluded ID: " + id);
     }
 }
