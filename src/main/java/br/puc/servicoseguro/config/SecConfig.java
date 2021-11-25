@@ -22,15 +22,25 @@ public class SecConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").permitAll()
                 .antMatchers("/h2-console/**").permitAll()
 
-                .antMatchers(HttpMethod.POST, "/login").permitAll()
-                .antMatchers("/api/*").authenticated()
+                .antMatchers(HttpMethod.POST, "/api/login").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/group").permitAll()
+
+                .antMatchers(HttpMethod.POST, "/api/usuarios").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/usuarios").authenticated()
+                .antMatchers(HttpMethod.PUT, "/api/usuarios").authenticated()
+                .antMatchers(HttpMethod.DELETE, "/api/usuarios").authenticated()
+
+                .antMatchers(HttpMethod.POST, "/api/produtos").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/produtos").permitAll()
+                .antMatchers(HttpMethod.PUT, "/api/produtos").authenticated()
+                .antMatchers(HttpMethod.DELETE, "/api/produtos").authenticated()
+                //.antMatchers("/api/*").authenticated()
                 .and()
                 .csrf().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().headers().frameOptions().sameOrigin().and()
 
-
                 // filtra requisições de login
-                .addFilterBefore(new JWTLoginFilter("/login", authenticationManager()),
+                .addFilterBefore(new JWTLoginFilter("/api/login", authenticationManager()),
                         UsernamePasswordAuthenticationFilter.class)
 
                 // filtra outras requisições para verificar a presença do JWT no header
@@ -39,12 +49,10 @@ public class SecConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        // cria uma conta default
 
         auth.inMemoryAuthentication()
                 .withUser("servico")
                 .password("{noop}servico")
                 .roles("ADMIN");
     }
-
 }

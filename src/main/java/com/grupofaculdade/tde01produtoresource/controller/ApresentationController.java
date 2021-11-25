@@ -2,6 +2,7 @@ package com.grupofaculdade.tde01produtoresource.controller;
 
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Date;
 
 @RestController
-@RequestMapping("/apresentation")
+@RequestMapping("api/group")
 public class ApresentationController {
 
-    @RequestMapping(method = RequestMethod.GET)
+    @GetMapping
     public ResponseEntity<String> findAll() {
         String html =  "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/><title>API PRODUTO - TRABALHO WEBSEGUROS</title><style>\n" +
                 "/* cspell:disable-file */\n" +

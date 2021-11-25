@@ -10,12 +10,11 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/produto")
+@RequestMapping("api/produtos")
 public class ProductResource {
 
     @Autowired
     private ProductService productService;
-
 
     @GetMapping
     public List<Product> getProductList() {
@@ -27,10 +26,9 @@ public class ProductResource {
         return productService.findById(Long.parseLong(id));
     }
 
-
     @PostMapping()
     public ResponseEntity<Product> save(@RequestBody Product product) {
-        product = productService.save(product).get() ;
+        product = productService.save(product).get();
         return ResponseEntity.ok().body(product);
     }
 
@@ -45,5 +43,4 @@ public class ProductResource {
         productService.deleteById(id);
         return ResponseEntity.ok().body("Produto excluído com sucesso");
     }
-
 }

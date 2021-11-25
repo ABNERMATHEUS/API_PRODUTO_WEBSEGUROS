@@ -22,7 +22,7 @@ public class User implements Serializable {
     private Long id;
 
     @NotEmpty
-    private String login;
+    private String username;
 
     private String password;
 
@@ -52,12 +52,12 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getLogin() {
-        return login;
+    public String getusername() {
+        return username;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setusername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -108,7 +108,7 @@ public class User implements Serializable {
         User user = (User) o;
 
         if (id != null ? !id.equals(user.id) : user.id != null) return false;
-        if (login != null ? !login.equals(user.login) : user.login != null) return false;
+        if (username != null ? !username.equals(user.username) : user.username != null) return false;
         if (password != null ? !password.equals(user.password) : user.password != null) return false;
         if (firstName != null ? !firstName.equals(user.firstName) : user.firstName != null) return false;
         if (lastName != null ? !lastName.equals(user.lastName) : user.lastName != null) return false;
@@ -119,7 +119,7 @@ public class User implements Serializable {
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (login != null ? login.hashCode() : 0);
+        result = 31 * result + (username != null ? username.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
         result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
         result = 31 * result + (lastName != null ? lastName.hashCode() : 0);

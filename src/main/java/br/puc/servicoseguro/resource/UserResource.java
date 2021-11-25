@@ -10,43 +10,33 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("api/usuarios")
 public class UserResource {
 
     @Autowired
     private UserService userService;
 
-    @GetMapping("/user")
+    @GetMapping()
     public List<User> getUsers() {
         return userService.findAll();
     }
 
-    @PostMapping("/user")
+    @PostMapping()
     public ResponseEntity<User>
     save(@Valid @RequestBody User user) {
         userService.save(user);
         return ResponseEntity.ok(user);
     }
 
-
-    @PutMapping("/user")
+    @PutMapping()
     public ResponseEntity update(@Valid @RequestBody User user) {
         userService.save(user);
         return ResponseEntity.ok().body(user);
     }
 
-
-    @DeleteMapping("/user")
-    public ResponseEntity<String> delete(@Valid @RequestBody User user) {
-        userService.delete(user);
-       return  ResponseEntity.ok().body("User excluded ID: " + user.getId());
-    }
-
-    @DeleteMapping("/user/{id}")
+    @DeleteMapping("{id}")
     public ResponseEntity<String> deleteById(@PathVariable Long id) {
         userService.deleteById(id);
         return ResponseEntity.ok().body("User excluded ID: " + id);
     }
-
-
 }
