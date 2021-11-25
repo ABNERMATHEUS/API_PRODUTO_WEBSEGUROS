@@ -1,0 +1,12 @@
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.DDD\bin\Debug\net5.0\CRUD_PRODUTO.DDD.deps.json
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.DDD\bin\Debug\net5.0\CRUD_PRODUTO.DDD.dll
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.DDD\bin\Debug\net5.0\ref\CRUD_PRODUTO.DDD.dll
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.DDD\bin\Debug\net5.0\CRUD_PRODUTO.DDD.pdb
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.DDD\obj\Debug\net5.0\CRUD_PRODUTO.DDD.csproj.AssemblyReference.cache
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.DDD\obj\Debug\net5.0\CRUD_PRODUTO.DDD.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.DDD\obj\Debug\net5.0\CRUD_PRODUTO.DDD.AssemblyInfoInputs.cache
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.DDD\obj\Debug\net5.0\CRUD_PRODUTO.DDD.AssemblyInfo.cs
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.DDD\obj\Debug\net5.0\CRUD_PRODUTO.DDD.csproj.CoreCompileInputs.cache
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.DDD\obj\Debug\net5.0\CRUD_PRODUTO.DDD.dll
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.DDD\obj\Debug\net5.0\ref\CRUD_PRODUTO.DDD.dll
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.DDD\obj\Debug\net5.0\CRUD_PRODUTO.DDD.pdb

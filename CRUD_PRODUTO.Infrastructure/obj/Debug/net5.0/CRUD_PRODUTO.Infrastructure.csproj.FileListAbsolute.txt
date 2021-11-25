@@ -1,0 +1,15 @@
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.Infrastructure\obj\Debug\net5.0\CRUD_PRODUTO.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.Infrastructure\obj\Debug\net5.0\CRUD_PRODUTO.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.Infrastructure\obj\Debug\net5.0\CRUD_PRODUTO.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.Infrastructure\obj\Debug\net5.0\CRUD_PRODUTO.Infrastructure.AssemblyInfo.cs
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.Infrastructure\obj\Debug\net5.0\CRUD_PRODUTO.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.Infrastructure\bin\Debug\net5.0\CRUD_PRODUTO.Infrastructure.deps.json
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.Infrastructure\bin\Debug\net5.0\CRUD_PRODUTO.Infrastructure.dll
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.Infrastructure\bin\Debug\net5.0\ref\CRUD_PRODUTO.Infrastructure.dll
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.Infrastructure\bin\Debug\net5.0\CRUD_PRODUTO.Infrastructure.pdb
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.Infrastructure\bin\Debug\net5.0\CRUD_PRODUTO.DDD.dll
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.Infrastructure\bin\Debug\net5.0\CRUD_PRODUTO.DDD.pdb
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.Infrastructure\obj\Debug\net5.0\CRUD_PRODUTO.Infrastructure.csproj.CopyComplete
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.Infrastructure\obj\Debug\net5.0\CRUD_PRODUTO.Infrastructure.dll
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.Infrastructure\obj\Debug\net5.0\ref\CRUD_PRODUTO.Infrastructure.dll
+C:\Users\Notebook\source\repos\CRUD_PRODUTO\CRUD_PRODUTO\CRUD_PRODUTO.Infrastructure\obj\Debug\net5.0\CRUD_PRODUTO.Infrastructure.pdb
