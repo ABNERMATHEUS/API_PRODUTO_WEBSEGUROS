@@ -8,10 +8,6 @@ TDE01 PARA ENTREGA DA DISCIPLINA DE SISTEMA WEB SEGUROS
   </li>
 
   <li>
-  Charles Jamil
-  </li>
-
-  <li>
   Jhonatan Medeiros
   </li>
 
