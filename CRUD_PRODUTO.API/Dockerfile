@@ -7,6 +7,8 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
 COPY ["CRUD_PRODUTO.API/CRUD_PRODUTO.API.csproj", "CRUD_PRODUTO.API/"]
+COPY ["CRUD_PRODUTO.DDD/CRUD_PRODUTO.DDD.csproj", "CRUD_PRODUTO.DDD/"]
+COPY ["CRUD_PRODUTO.Infrastructure/CRUD_PRODUTO.Infrastructure.csproj", "CRUD_PRODUTO.Infrastructure/"]
 RUN dotnet restore "CRUD_PRODUTO.API/CRUD_PRODUTO.API.csproj"
 COPY . .
 WORKDIR "/src/CRUD_PRODUTO.API"
